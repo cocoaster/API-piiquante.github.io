@@ -7,8 +7,7 @@ const usersRoutes = require("./routes/users");
 
 const app = express();
 
-require("dotenv").config();
-const URI = process.env.STRING_URI;
+
 
 const morgan = require("morgan");
 const path = require("path");
@@ -22,9 +21,12 @@ const userSchema = new mongoose.Schema({
 const user = mongoose.model("User", userSchema);
 
 //
+dotenv.config();
+
+const uri = process.env.STRING_URI;
 
 mongoose
-  .connect(`${URI}`, {useNewUrlParser: true, useUnifiedTopology: true})
+  .connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
