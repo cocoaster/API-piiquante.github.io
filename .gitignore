@@ -1,2 +1,4 @@
 backend/images/
 backend/.env
+backend/node_modules
+backend/Procfile
