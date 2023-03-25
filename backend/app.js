@@ -26,7 +26,10 @@ dotenv.config();
 const uri = process.env.STRING_URI;
 
 mongoose
-  .connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
+  .connect(
+    "mongodb+srv://coco:pIt5Yd3dzH4qYctF@fullstack-mern.nihccbx.mongodb.net/apiPiiquante?retryWrites=true&w=majority",
+    {useNewUrlParser: true, useUnifiedTopology: true}
+  )
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
